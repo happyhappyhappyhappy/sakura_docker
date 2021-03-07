@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  cppdev-alpine-sakura1:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: cppdev-alpine-sakura1
+    init: true
+    container_name: cppdev-alpine-sakura1
+    volumes: 
+      - type: bind
+        source: .
+        target: /arena
+    stdin_open: true
+    tty: true
+    working_dir: /arena/src/build
