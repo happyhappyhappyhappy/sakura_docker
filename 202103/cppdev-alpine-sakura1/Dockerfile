@@ -1,5 +1,7 @@
 FROM alpine:3.12.4
+# ユーザーsakuraを作成した上で環境作成 20210307
 RUN apk update && \
     apk add --no-cache bind-tools && \
     apk add --no-cache alpine-sdk cmake clang && \
     apk add --no-cache libressl-dev vim bash
+RUN addgroup -g 10001 -s nonroot && adduser -u 10000 -S -G nonroot /home/sakura sakura
