@@ -5,3 +5,4 @@ RUN apk update && \
     apk add --no-cache alpine-sdk cmake clang && \
     apk add --no-cache libressl-dev vim bash
 RUN addgroup -g 10001 -s nonroot && adduser --shell /bin/bash -u 10000 -S -G nonroot /home/sakura sakura
+USER sakura
