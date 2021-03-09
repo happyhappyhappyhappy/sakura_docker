@@ -3,10 +3,10 @@ services:
   cppdev-alpine-sakura1:
     build:
       context: .
-      dockerfile: dockerfile
-    image: cppdev-alpine-sakura1
+      dockerfile: Dockerfile
+    image: cppdev-alpine-sakura1-i
     init: true
-    container_name: cppdev-alpine-sakura1
+    container_name: cppdev-alpine-sakura1-c
     volumes: 
       - type: bind
         source: .
