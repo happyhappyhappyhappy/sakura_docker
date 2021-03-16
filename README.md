@@ -20,3 +20,4 @@ docker stop alpine_sandbox0
 ~~~
 で終了する。
 と思うがもう一度チェックする。
+test
