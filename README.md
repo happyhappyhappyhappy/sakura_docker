@@ -19,4 +19,11 @@ docker exec -it alpine_sandbox0 /bin/sh
 docker stop alpine_sandbox0
 ~~~
 で終了する。
+
 と思うがもう一度チェックする。
+
+次の実験はrunコマンドに-dコマンドを入れ、-itを外してみる。
+こうするとこのコマンドではexecで入りexitで抜けることが出来るかも。
+
+
+あと、しばらくはハイフン二つ使った単語オプションで行こう。
