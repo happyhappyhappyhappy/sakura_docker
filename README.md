@@ -49,3 +49,12 @@ exit
 background見たいなオプションが無かったか。
 
 "restart" やってみても駄目。"run --interactive --tty" じゃ無ければ駄目か。
+
+次のコマンドで最終確認。一旦2021/03/19の所は/bin/shを使って見ることにする。無くても良いか否かは明日以降確認する
+```
+docker run --init --interactive --tty --detach --name "alpinesandbox0319" alpine_sandbox:1.0 /bin/sh
+```
+コマンドに対しては何もせずに終了。
+
+execコマンドで接続した後は先ほどと問題なし。
+
