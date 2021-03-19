@@ -27,3 +27,25 @@ docker stop alpine_sandbox0
 
 
 あと、しばらくはハイフン二つ使った単語オプションで行こう。
+
+## 2021/03/19確認
+失敗した。当面今まで通り。ログはこの通り
+
+```
+$ docker run --init --name "alpine_sandbox1" --detach alpine_sandbox:1.0
+07a42e9b98acfdd61e557a477c176cac300b2ad94984fe2dfcdea22c5b1518cb
+$ docker ps -a
+CONTAINER ID   IMAGE                COMMAND     CREATED          STATUS                     PORTS     NAMES
+07a42e9b98ac   alpine_sandbox:1.0   "/bin/sh"   14 seconds ago   Exited (0) 4 seconds ago             alpine_sandbox1
+$ docker exec -it "alpine_sandbox1" /bin/sh
+Error response from daemon: Container 07a42e9b98acfdd61e557a477c176cac300b2ad94984fe2dfcdea22c5b1518cb is not running
+$ docker start alpine_sandbox1
+alpine_sandbox1
+$ docker ps -a
+CONTAINER ID   IMAGE                COMMAND     CREATED         STATUS                      PORTS     NAMES
+07a42e9b98ac   alpine_sandbox:1.0   "/bin/sh"   2 minutes ago   Exited (0) 11 seconds ago             alpine_sandbox1
+exit
+```
+background見たいなオプションが無かったか。
+
+"restart" やってみても駄目。"run --interactive --tty" じゃ無ければ駄目か。
