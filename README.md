@@ -58,3 +58,4 @@ docker run --init --interactive --tty --detach --name "alpinesandbox0319" alpine
 
 execコマンドで接続した後は先ほどと問題なし。
 
+<span style="color: red; ">ここから先はフォルダ「ExprMemo」の中のファイルに移行します</span>
