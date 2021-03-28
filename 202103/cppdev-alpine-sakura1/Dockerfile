@@ -5,5 +5,5 @@ RUN apk update && \
     apk add --no-cache alpine-sdk cmake clang && \
     apk add --no-cache libressl-dev vim bash shadow git 
 RUN cp /usr/share/zoneinfo/Japan /etc/localtime
-# RUN addgroup -g 10001 -S nonroot
+RUN addgroup -g 10001 -S nonroot
 # RUN adduser --shell /bin/bash --uid 10000 -G nonroot --home /home/sakura
