@@ -11,7 +11,7 @@ services:
     volumes: 
       - type: bind
         source: .
-        target: /arena
+        target: /cpplab
     stdin_open: true
     tty: true
-    working_dir: /arena/src/build
+    working_dir: /cpplab/src/build
