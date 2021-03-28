@@ -7,7 +7,7 @@ services:
     image: cppdev-alpine-sakura1-i
     init: true
     container_name: cppdev-alpine-sakura1-c
-hostname: cpp-sakura-prot1
+    hostname: cpp-sakura-prot1
     volumes: 
       - type: bind
         source: .
