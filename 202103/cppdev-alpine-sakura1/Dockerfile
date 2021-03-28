@@ -1,4 +1,4 @@
-FROM alpine:3.12.4
+FROM alpine:3.13.3
 # ユーザーsakuraを作成した上で環境作成 20210307
 RUN apk update && \
     apk add --no-cache bind-tools tzdata && \
