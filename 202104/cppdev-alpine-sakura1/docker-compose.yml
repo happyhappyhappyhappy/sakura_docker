@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  cppdev-alpine-sakura:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: cppdev-alpine-sakura-i2
+    init: true
+    container_name: cppdev-alpine-sakura-c2
+    hostname: cpp-sakura
+    stdin_open: true
+    tty: true
+    user: sakura
+
