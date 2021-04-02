@@ -10,5 +10,6 @@ RUN cp /usr/share/zoneinfo/Japan /etc/localtime
 # RUN adduser --shell /bin/bash --uid 10000 -G nonroot --home /home/sakura
 # RUN adduser --shell /bin/sh --uid 10001 -G adm --home /home/sakura0 sakura0
 # RUN echo '%adm ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+# 何故これが失敗するか。
 RUN adduser -D -u 1001 -s /bin/bash -G wheel sakura0
 RUN echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
