@@ -1,5 +1,6 @@
 FROM alpine:3.13.4
 # ユーザーsakuraを作成した上で環境作成 20210307
+# yamanakaに変更 20210307
 RUN apk update && \
     apk add --no-cache bind-tools tzdata sudo && \
     apk add --no-cache coreutils alpine-sdk cmake clang && \
@@ -13,5 +14,6 @@ RUN cp /usr/share/zoneinfo/Japan /etc/localtime
 # 何故これが失敗するか。
 # RUN adduser -D -u 10001 --shell /bin/bash -G adm yamanaka
 # RUN echo '%adm ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-RUN adduser --desabledpassword -u 10001 -s /bin/bash -G adm yamanaka 
+RUN adduser --desabledpassword -u 10001 -s /bin/bash \\
+     -G adm --home /cpplab yamanaka 
 RUN echo '%adm ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
