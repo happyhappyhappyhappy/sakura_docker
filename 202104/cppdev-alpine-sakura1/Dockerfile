@@ -8,8 +8,10 @@ RUN cp /usr/share/zoneinfo/Japan /etc/localtime
 # RUN addgroup -g 10001 -S nonroot
 # https://qiita.com/cheekykorkind/items/ad499245bda4c85c6d75 参照
 # RUN adduser --shell /bin/bash --uid 10000 -G nonroot --home /home/sakura
-# RUN adduser --shell /bin/sh --uid 10001 -G adm --home /home/sakura0 sakura0
+# RUN adduser --shell /bin/bash --uid 10001 -G adm --home /cpplab yamanaka
 # RUN echo '%adm ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 # 何故これが失敗するか。
-# RUN adduser -D -u 1001 -s /bin/bash -G wheel sakura0
-# RUN echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+# RUN adduser -D -u 10001 --shell /bin/bash -G adm yamanaka
+# RUN echo '%adm ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+RUN adduser --desabledpassword -u 10001 -s /bin/bash -G adm yamanaka 
+RUN echo '%adm ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
