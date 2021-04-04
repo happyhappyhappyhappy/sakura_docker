@@ -14,6 +14,5 @@ RUN cp /usr/share/zoneinfo/Japan /etc/localtime
 # 何故これが失敗するか。
 # RUN adduser -D -u 10001 --shell /bin/bash -G adm yamanaka
 # RUN echo '%adm ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-RUN adduser --desabledpassword --uid 10001 --shell /bin/bash \\
-     --ingroup adm --home /cpplab yamanaka 
+RUN adduser -D -u 10001  -s /bin/bash -G adm -h /cpplab yamanaka 
 RUN echo '%adm ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
