@@ -8,7 +8,7 @@
     ],
 
     // コンテナのサービス名
- //   "service": "app",
+    "service": "cppdev-alpine-sakura2",
 
     // コンテナ内でのユーザー
     "remoteUser": "yamanaka",
