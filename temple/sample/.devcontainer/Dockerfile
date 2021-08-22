@@ -7,17 +7,23 @@
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 FROM ubuntu:focal
 
-ARG USERNAME=kaede
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
+# 好きな名前に変更
+ARG USERNAME=sample
+# いずれ実験
+# ARG BASEDIR="/wrk" --base-dir オプションで利用
 
+ARG HOMEDIR="/mylab"
+# 変更不可
+ARG USER_UID=1000 
+ARG USER_GID=$USER_UID 
 
 RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m -d ${HOMEDIR} $USERNAME \
     #
     # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
-    && apt-get update \
-    && apt-get install -y sudo \
+    && apt update \
+    && apt upgrade -y \
+    && apt install -y sudo \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 
