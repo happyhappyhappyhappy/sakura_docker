@@ -28,6 +28,6 @@
 	// "postCreateCommand": "gcc -v",
 
 	// Comment out this line to run as root instead.
-	"remoteUser": "kaede"
+	"remoteUser": "sample"
 
 }
