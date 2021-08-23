@@ -23,7 +23,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
     # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
     && apt update \
     && apt upgrade -y \
-    && apt install -y sudo \
+    && apt install -y sudo bash \
     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME \
     && chsh -s bash ${USERNAME}
