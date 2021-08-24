@@ -1,13 +1,13 @@
 version: "3.3"
 services:
-  sample-xxx:
+  sample-0:
     build:
       context: .
-      dockerfile: Dockerfile
-    image: sample-iXXX1
+      dockerfile: ./.devcontainer/Dockerfile
+    image: sample-i0
     init: true
-    container_name: sample-cXXX1
-    hostname: sampleX
+    container_name: sample-c0
+    hostname: hostname0
     stdin_open: true
     tty: true
     # user: yamanaka試しにテスト 2021/04/03 →中止
