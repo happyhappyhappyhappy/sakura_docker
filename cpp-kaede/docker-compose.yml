@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+# サービス名はdevcontainer.jsonのファイル内と一致させる
+  cpp-kaede:
+    build:
+      context: .
+      dockerfile: ./.devcontainer/Dockerfile
+    image: cpp-kaede-i
+    init: true
+    container_name: cpp-kaede-c
+    hostname: cppkaede
+    stdin_open: true
+    tty: true
+    # user: yamanaka試しにテスト 2021/04/03 →中止
+
